@@ -17,14 +17,15 @@
       migrations/             директории с миграциями
 
 
-PHP
-------------
-
-PHP >= 5.6.0.
-
 
 Установка
 ------------
+
+### Git clone
+
+~~~
+https://github.com/yumadilowadim/yii2testapi.git
+~~~
 
 ### Composer
 
