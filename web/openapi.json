@@ -1,0 +1,106 @@
+swagger: "2.0"
+info:
+  description: "Тестовое API на yii2."
+  version: "0.0.3"
+  title: "TEST API"
+  termsOfService: "http://swagger.io/terms/"
+  contact:
+    email: "yumadilowadim@ya.ru"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "test.local"
+basePath: "/"
+tags:
+- name: "cars"
+  description: "Информация об автомобилях"
+schemes:
+- "https"
+- "http"
+paths:
+  /cars/list/:
+    get:
+      tags:
+      - "cars"
+      summary: "Все записи автомобилей"
+      description: "Получение всех записей из БД:\n\nhttp://test.local/web/api/cars/list?access-token={token}"
+      operationId: ""
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "status"
+        in: "query"
+        description: "Status values that need to be considered for filter"
+        required: true
+        type: "array"
+        items:
+          type: "string"
+          enum:
+          - "available"
+          - "pending"
+          - "sold"
+          default: "available"
+        collectionFormat: "multi"
+      responses:
+        "200":
+          description: "successful operation"
+        "400":
+          description: "Invalid status value"
+  /cars/:
+    get:
+      tags:
+      - "cars"
+      summary: "Записи автомобилей с фильтрацией"
+      description: "Получить вторую запись:\nhttp://test.local/web/api/cars/2?access-token={token}\n\nВторая страница:\nhttp://test.local/web/api/cars/?page=2&access-token={token}\n\nФильтр по полю:\nhttp://test.local/web/api/cars/?filter[car_engine]=2&access-token={token}\n\nМножественная фильтрация: \nhttp://test.local/web/api/cars/?filter[car_engine]=2&filter[car_drive]=1&access-token={token}\n\nФильтрация по одному полю с несколькими значениями: \nhttp://test.local/web/api/cars/?filter[car_engine][in][]=1&filter[car_engine][in][]=2&access-token={token}\n\nСортировка: \nhttp://test.local/web/api/cars/?sort=car_drive\nhttp://test.local/web/api/cars/?sort=-car_drive"
+      operationId: ""
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "status"
+        in: "query"
+        description: "Status values that need to be considered for filter"
+        required: true
+        type: "array"
+        items:
+          type: "string"
+          enum:
+          - "available"
+          - "pending"
+          - "sold"
+          default: "available"
+        collectionFormat: "multi"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Cars"
+        "400":
+          description: "Invalid status value"
+definitions:
+  Cars:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+      car_model:
+        type: "string"
+        format: "100"
+      car_brand:
+        type: "string"
+        format: "100"
+      car_engine:
+        type: "integer"
+        format: "int64"
+      car_drive:
+        type: "integer"
+        format: "int64"
+    xml:
+      name: "Order"
+externalDocs:
+  description: "Find out more about Swagger"
+  url: "http://swagger.io"
