@@ -61,6 +61,9 @@ $config = [
         'api' => [
           'class' => 'app\modules\api\Module',
         ],
+        'front' => [
+          'class' => 'app\modules\front\Module',
+        ],
     ],
     'params' => $params,
 ];
