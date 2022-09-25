@@ -14,7 +14,7 @@
 - [x] Widgets
 - [x] Migrations
 - [ ] Tests
-- [ ] Console Apps
+- [x] Console Apps `commands/readme.txt`
 
 Проектные директории
 -------------------
