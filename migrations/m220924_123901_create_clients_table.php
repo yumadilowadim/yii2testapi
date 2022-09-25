@@ -30,6 +30,8 @@ class m220924_123901_create_clients_table extends Migration
      */
     public function safeDown()
     {
+		//$this->dropIndex('client_car','clients');
+		$this->dropForeignKey('client_car_fk', 'clients');
         $this->dropTable('{{%clients}}');
     }
 }
