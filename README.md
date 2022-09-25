@@ -10,6 +10,12 @@
 
 [![Latest Stable Version](https://img.shields.io/packagist/v/yiisoft/yii2-app-basic.svg)](https://packagist.org/packages/yiisoft/yii2-app-basic)
 
+- [x] API
+- [x] Widgets
+- [x] Migrations
+- [ ] Tests
+- [ ] Console Apps
+
 Проектные директории
 -------------------
 
