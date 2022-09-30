@@ -13,8 +13,10 @@
 - [x] API
 - [x] Widgets
 - [x] Migrations
-- [ ] Tests
 - [x] Console Apps `commands/readme.txt`
+- [ ] Tests
+- [ ] Queue
+- [ ] Schedule
 
 Проектные директории
 -------------------
